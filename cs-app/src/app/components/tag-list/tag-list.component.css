@@ -1,0 +1,30 @@
+.tag, .filter {
+	margin-bottom: 25px;
+}
+
+.tag span, .filter span {
+	display: block;
+}
+
+.feature-filter {
+	margin-bottom: 20px;
+}
+
+.feature-filter li {
+	cursor: pointer;
+}
+
+.row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.panel, .tags {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.main {
+	padding-left: 25px;
+    padding-right: 25px;
+}

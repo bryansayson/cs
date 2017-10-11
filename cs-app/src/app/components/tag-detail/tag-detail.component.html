@@ -1,0 +1,15 @@
+<div class="main">
+	<h1>
+	  {{selectedTag}}
+	</h1>
+	<div class="date-container">
+		<div>
+			<ng-daterangepicker [(ngModel)]="dates" [options]="options"></ng-daterangepicker>
+		</div>
+		<div>
+			<a (click)="fetchData(dates)" class="btn btn-primary btn-lg"> Go </a>
+		</div>
+	</div>
+	<h1> {{value}} </h1>
+</div>
+

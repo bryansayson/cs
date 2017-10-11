@@ -1,0 +1,13 @@
+.main {
+	padding-left: 25px;
+    padding-right: 25px;
+}
+
+.date-container {
+	min-height: 100px;
+}
+
+.date-container div {
+	display: inline-block;
+	vertical-align: middle;
+}

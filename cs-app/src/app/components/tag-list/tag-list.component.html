@@ -1,0 +1,35 @@
+<div class="main">
+
+  <div class="row center">
+
+    <h1>
+      {{title}}
+    </h1>
+
+    <div class="row">
+      <div class="btn-group feature-filter">
+        <a href="#" class="btn btn-default">Filter by Feature</a>
+        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li *ngFor="let feature of features" value="{{feature}}" (click)="toggleFeature(feature)"> {{feature}} </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-4 center tags">
+      <div class="panel panel-success tag" *ngFor="let tag of tags | featureFilter:selectedFeature">
+      <div class="panel-heading">
+        <a [routerLink]="['/tagdetail', tag.tagId]"> 
+          {{tag.label}}
+        </a>
+      </div>
+      <div class="panel-body">
+        <span> Features: {{tag.features}} </span>
+        <span> Unit: {{tag.unit}} </span>
+      </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
