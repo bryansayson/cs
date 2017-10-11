@@ -10,10 +10,10 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start": "node server.js",
-    "postinstall": "ng build --aot -prod",
+    "postinstall": "ng build --aot -prod"
   },
     "engines": {
-    "node": "6.11.1"
+      "node": "6.11.1"
   },
   "private": true,
   "dependencies": {
@@ -58,6 +58,6 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.2",
     "ts-node": "~3.2.0",
-    "tslint": "~5.7.0",
+    "tslint": "~5.7.0"
   }
 }
