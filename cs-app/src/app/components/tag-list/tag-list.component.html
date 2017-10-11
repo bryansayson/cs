@@ -1,12 +1,12 @@
-<div class="main">
+<div class="container">
 
   <div class="row center">
 
-    <h1>
+    <h1 class="title">
       {{title}}
     </h1>
 
-    <div class="row">
+    <div class="col">
       <div class="btn-group feature-filter">
         <a href="#" class="btn btn-default">Filter by Feature</a>
         <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
@@ -16,7 +16,7 @@
       </div>
     </div>
 
-    <div class="col-md-4 center tags">
+    <div class="col tags">
       <div class="panel panel-success tag" *ngFor="let tag of tags | featureFilter:selectedFeature">
       <div class="panel-heading">
         <a [routerLink]="['/tagdetail', tag.tagId]"> 

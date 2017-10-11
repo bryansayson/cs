@@ -1,14 +1,24 @@
-<div class="main">
-	<h1>
-	  {{selectedTag}}
-	</h1>
-	<div class="date-container">
-		<div>
+<div class="container">
+
+	<div class="panel panel-info">
+	  <div class="panel-heading">
+	    <span class="panel-title"> {{selectedTag}} </span>
+	  </div>
+	  <div class="panel-body">
+	    <span> Please select a date range. </span>
+	    <div class="col date-picker">
 			<ng-daterangepicker [(ngModel)]="dates" [options]="options"></ng-daterangepicker>
+			<a (click)="fetchData(dates)" class="go btn btn-primary btn-lg"> Go </a>
 		</div>
-		<div>
-			<a (click)="fetchData(dates)" class="btn btn-primary btn-lg"> Go </a>
-		</div>
+	  </div>
 	</div>
+
+	<div class="col stats-container">
+		<li *ngFor="let entry of stats">
+			<span> {{entry.observationTS}} </span>
+			<span> {{entry.value}} </span>
+		</li>
+	</div>
+
 </div>
 

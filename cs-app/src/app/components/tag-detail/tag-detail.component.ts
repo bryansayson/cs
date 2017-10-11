@@ -15,6 +15,7 @@ export class TagDetailComponent implements OnInit {
   dates: string;
   start: string;
   end: string;
+  stats: Array<any>;
   options: NgDateRangePickerOptions;
 
   constructor(private route: ActivatedRoute, private dateService: DateService) { }
@@ -44,7 +45,7 @@ export class TagDetailComponent implements OnInit {
       console.log(this.end);
 
       this.dateService.getTags(this.selectedTag, this.start, this.end).subscribe((tags) => {
-        console.log(tags);
+        this.stats = tags;
       });
     }
   };
