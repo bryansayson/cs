@@ -38,8 +38,8 @@ export class TagDetailComponent implements OnInit {
   fetchData(selectedDates) {
     if (selectedDates) {
       this.dates = selectedDates.split('-');
-      this.start = new Date(dates[0]).toJSON();
-      this.end = new Date(dates[1]).toJSON();
+      this.start = new Date(this.dates[0]).toJSON();
+      this.end = new Date(this.dates[1]).toJSON();
       console.log(this.start);
       console.log(this.end);
 
