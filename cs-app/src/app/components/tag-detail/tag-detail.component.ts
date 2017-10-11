@@ -12,6 +12,9 @@ import { DateService } from '../../services/date.service';
 export class TagDetailComponent implements OnInit {
   selectedTag: string;
   private sub: any;
+  dates: string;
+  start: string;
+  end: string;
   options: NgDateRangePickerOptions;
 
   constructor(private route: ActivatedRoute, private dateService: DateService) { }
@@ -34,13 +37,13 @@ export class TagDetailComponent implements OnInit {
 
   fetchData(selectedDates) {
     if (selectedDates) {
-      let dates = selectedDates.split('-');
-      let start = new Date(dates[0]).toJSON();
-      let end = new Date(dates[1]).toJSON();
-      console.log(start);
-      console.log(end);
+      this.dates = selectedDates.split('-');
+      this.start = new Date(dates[0]).toJSON();
+      this.end = new Date(dates[1]).toJSON();
+      console.log(this.start);
+      console.log(this.end);
 
-      this.dateService.getTags(this.selectedTag, start, end).subscribe((tags) => {
+      this.dateService.getTags(this.selectedTag, this.start, this.end).subscribe((tags) => {
         console.log(tags);
       });
     }
