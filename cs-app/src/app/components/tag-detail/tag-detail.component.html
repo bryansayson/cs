@@ -1,9 +1,11 @@
 <div class="container">
 
 	<div class="panel panel-info">
+
 	  <div class="panel-heading">
 	    <span class="panel-title"> {{selectedTag}} </span>
 	  </div>
+
 	  <div class="panel-body">
 	    <span> Please select a date range. </span>
 	    <div class="col date-picker">
@@ -11,13 +13,23 @@
 			<a (click)="fetchData(dates)" class="go btn btn-primary btn-lg"> Go </a>
 		</div>
 	  </div>
+
 	</div>
 
-	<div class="col stats-container">
-		<li *ngFor="let entry of stats">
-			<span> {{entry.observationTS}} </span>
-			<span> {{entry.value}} </span>
-		</li>
+	<div class="row" *ngIf="lineChartData.length > 0">
+	  <div class="col">
+	    <div style="display: block;">
+	    <canvas baseChart width="400" height="200"
+	                [datasets]="lineChartData"
+	                [labels]="lineChartLabels"
+	                [options]="lineChartOptions"
+	                [colors]="lineChartColors"
+	                [legend]="lineChartLegend"
+	                [chartType]="lineChartType"
+	                (chartHover)="chartHovered($event)"
+	                (chartClick)="chartClicked($event)"></canvas>
+	    </div>
+	  </div>
 	</div>
 
 </div>

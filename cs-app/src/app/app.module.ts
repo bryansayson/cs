@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { NgDateRangePickerModule } from 'ng-daterangepicker';
+import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
 import { FeatureFilterPipe } from './pipes/feature-filter.pipe';
@@ -27,7 +28,8 @@ import { TagListComponent } from './components/tag-list/tag-list.component';
     FormsModule,
     HttpModule,
     RouterModule.forRoot(AppRoutes),
-    NgDateRangePickerModule
+    NgDateRangePickerModule,
+    ChartsModule
   ],
   providers: [DataService, DateService],
   bootstrap: [AppComponent]
